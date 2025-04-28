@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="feauteredbooks.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <title>Document</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><i class="fa-solid fa-book">Book Heaven</div></i>
+        <nav>
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus1.html">About</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="login.html">Account</a></li>
+            <li><a href="contact us.html">Contact Us</a></li>
+            <li><button id="cartButton"> Cart(0)</button> </li>
+        
+          </ul>
+        </nav>
+      </header>
+    
+    
+
+
+   <br><br>
+                    <!--Arrivals-->
+                
+                        <div class="arrivals">
+                            <h1><u>Featured Books</u></h1><br><br>
+                            <!-- <div class="icon-cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        <span>0</span></div> -->
+                            <div class="hori">
+                                <div class="search-container">
+                                    <form action="/search">
+                                        <input type="text" placeholder="Search here for books....." name="search" class="search-bar">
+                                        <button type="submit" class="search-btn">Search</button>
+                                
+                                    </form>
+                                </div>
+
+                                <div class="search-container">
+                                    <form action="/search">
+                                        <input type="text" placeholder="Search here for authors....." name="search" class="search-bar">
+                                        <button type="submit" class="search-btn">Search</button>
+                                
+                                    </form>
+                                </div>
+                                
+                                <div class="search-container1">
+                                    <form action="/search1" method="get">
+                                        <div class="search-box1">
+                                            <input type="text" placeholder="Search here for categories....." name="search" class="search-bar">
+                                            <button type="button" class="category-btn1" onclick="toggleDropdown()">Categories</button>
+                                            <button type="submit" class="search-btn2">Search</button>
+                                        </div>
+                                        <div id="category-dropdown" class="dropdown-content">
+                                            <label><input type="checkbox" name="category" value="Books"> Romance</label>
+                                            <label><input type="checkbox" name="category" value="Movies">Thrill</label>
+                                            <label><input type="checkbox" name="category" value="Music">Horror</label>
+                                            <label><input type="checkbox" name="category" value="Games">Fairytale</label>
+                                            <label><input type="checkbox" name="category" value="Electronics">Mystery</label>
+                                            <label><input type="checkbox" name="category" value="Electroni">Poetic</label>
+                                            <label><input type="checkbox" name="category" value="Eleconics">Fantasy</label>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <script>
+                                    function toggleDropdown() {
+                                        var dropdown = document.getElementById("category-dropdown");
+                                        if (dropdown.style.display === "block") {
+                                            dropdown.style.display = "none";
+                                        } else {
+                                            dropdown.style.display = "block";
+                                        }
+                                    }
+                                </script>
+                                
+                                
+                                
+                                
+                                
+                                
+                                </div><br><br>
+                                
+                                
+                            <div class="book-list">
+                            
+                   <div class="book">
+                               <a name="Featured"> <img src="Black Illustrated Gothic Medieval Kingdom Story Book Cover.png">
+                               </a>
+                                <h3>The Whispering Throne</h3>
+                           <p class="writer">Francois Mercer</p>
+                           <p class="categories">Thriller</p>
+                           <p class="book_price">₹415</p><br>
+                           <button class="add-to-cart" data-book="The Whispering Throne" data-price="415">Add to Cart</button>
+                            </div>
+                            <div class="book">
+                                <img src="Green Scenery Illustrative Novel Book Cover.png">
+                           <h3>Love Brings You Home</h3>
+                           <p class="writer">Helene Paquet</p>
+                           <p class="categories">Romance</p>
+                           <p class="book_price">₹450</p>
+                           <button class="add-to-cart" data-book="Love Brings You Home" data-price="450">Add to Cart</button>
+                            </div>
+                            <div class="book">
+                                <img src="Blue and White Watercolor Rainy Love Romance Book Cover.png">
+                           <h3>Once Upon a Rainy Day</h3>
+                           <p class="writer">Ndemi Otieno</p>
+                           <p class="categories">Romance</p>
+                           <p class="book_price">₹525</p>
+                           <button class="add-to-cart" data-book="Once Upon a Rainy Day" data-price="525">Add to Cart</button>
+                            </div>
+                            <div class="book">
+                                <img src="Purple Cute Cartoon Fairy Winter Stories Book Cover.png">
+                           <h3>Winter Stories</h3>
+                           <p class="writer">Julianna Silva</p><br>
+                           <p class="categories">Fairy Tale</p>
+                           <p class="book_price">₹449</p><br>
+                           <button class="add-to-cart" data-book="Winter Stories" data-price="449">Add to Cart</button>
+                            </div>
+                            <div class="book">
+                                <img src="Brown and Blue Wizard Fantasy Novel Book Cover.png">
+                           <h3>The Young Wizard</h3>
+                           <p class="writer">Aaron Loeb</p><br>
+                           <p class="categories">Thriller</p>
+                           <p class="book_price">₹599</p><br>
+                           <button class="add-to-cart" data-book="The Young Wizard" data-price="599">Add to Cart</button>
+                            </div>
+                            <div class="book">
+                                <img src="Elegant Dark Woods Fantasy Photo Book Cover.png">
+                           <h3>Walk Into The Shadow</h3>
+                           <p class="writer">Estelle Daracy</p>
+                           <p class="categories">Horror</p>
+                           <p class="book_price">₹459</p>
+                           <button class="add-to-cart" data-book="Walk Into The Shadow" data-price="459">Add to Cart</button>
+                            </div>
+                            <div class="book">
+                                <img src="Blue Stars Watercolor Illustrated Cute Girl Book Cover.png">
+                           <h3>Magic Stars</h3>
+                           <p class="writer">Howard Ong</p><br>
+                           <p class="categories">Fantasy </p>
+                           <p class="book_price">₹499</p>
+                           <button class="add-to-cart" data-book=">Magic Stars" data-price="499">Add to Cart</button>
+                            </div>
+                            <div class="book">
+                                <img src="Blue Black White Modern Concept Story About You And Me Book Cover.png">
+                           <h3>Story About You And Me</h3>
+                           <p class="writer">Hae-Won Jeon</p>
+                           <p class="categories">Romance</p>
+                           <p class="book_price">₹649</p>
+                           <button class="add-to-cart" data-book="Story About You And Me" data-price="649">Add to Cart</button>
+                            </div>
+                            <div class="book">
+                                <img src="Dark Urban eBook Template in Black Blue and Yellow Abstract Illustrative Style.png">
+                           <h3>The Heist</h3>
+                           <p class="writer">Vihaan K.</p><br>
+                           <p class="categories">Thriller</p>
+                           <p class="book_price">₹649</p><br>
+                           <button class="add-to-cart" data-book="The Heist" data-price="649">Add to Cart</button>
+                            </div>
+                            <div class="book">
+                                <img src="Blue and White Neon Dreamy Mystery Novel Book Cover.png">
+                           <h3>Moonlight Enigma</h3>
+                           <p class="writer">Benjamin Shah</p><br>
+                           <p class="categories">Mystery</p>
+                           <p class="book_price">₹499</p><br>
+                           <button class="add-to-cart" data-book="Moonlight Enigma" data-price="499">Add to Cart</button>
+                            </div>
+                            <div class="book">
+                                <img src="Green Watercolor Masterpiece Biography Book Cover.png">
+                           <h3>A Masterpiece By Rabindranath Tagore</h3>
+                           <p class="writer">Rabindranath Tagore</p>
+                           <p class="categories">Poetic</p>
+                           <p class="book_price">₹459</p><br>
+                           <button class="add-to-cart" data-book="A Masterpiece By Rabindranath Tagore" data-price="459">Add to Cart</button>
+                            </div>
+                            <div class="book">
+                                <img src="Cream Torn Simple Poetry Book Cover.png">
+                           <h3>A Poet's Odyssey</h3>
+                           <p class="writer">Rabindranath Tagore</p><br>
+                           <p class="categories">Poetic</p>
+                           <p class="book_price">₹455</p>
+                           <button class="add-to-cart" data-book="A Poet's Odyssey" data-price="455">Add to Cart</button>
+                            </div>
+                                
+                            </div>
+                            
+                        </div>
+                       
+                        <div id="cartModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close-btn">&times;</span>
+                                <h2>Your Cart</h2>
+                                <ul id="cartItems"></ul>
+                                <p id="totalPrice"></p>
+                                <button id="proceedToPaymentButton">Proceed to Payment</button>
+                            </div>
+                        </div>
+                    
+                        <!-- Payment Modal -->
+                        <div id="paymentModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close-btn">&times;</span>
+                                <h2>Payment Options</h2>
+                                <button id="creditCardPaymentButton">Credit Card</button>
+                                
+                                <button id="DebitcardPaymentButton">Debit Cart</button>
+                                <button id="paytmPaymentButton">Paytm</button>
+                                <button id="googlepayPaymentButton">Google Pay</button>
+                                
+
+                            </div>
+                        </div>
+                    
+                        <!-- Success Modal -->
+                        <div id="successModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close-btn">&times;</span>
+                                <h2>Payment Successful</h2>
+                                <p>Your payment has been processed successfully. Thank you for your purchase!</p>
+                            </div>
+                        </div>
+                    
+                    
+                        
+                          <script src="scriptfeatured.js"></script>
+                          
+</body>
+</html>
+                        

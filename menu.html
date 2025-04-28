@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering Menu</title>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+  background-image: url(https://t3.ftcdn.net/jpg/02/96/69/22/360_F_296692203_k4lOpOt8mAcYpKzicNmJTpnsE9ZdwyHX.jpg);
+  background-size: 500px;
+    border: aliceblue;
+   
+    padding: 20px;
+    height: 2770PX;
+}
+
+.sidebar h2 {
+    margin-bottom: 35px;
+    font-size: 45px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-image: url(https://t3.ftcdn.net/jpg/02/96/69/22/360_F_296692203_k4lOpOt8mAcYpKzicNmJTpnsE9ZdwyHX.jpg);
+    background-size: 1000px;
+}
+
+header {
+    display: flex;
+
+    margin-bottom: 30px;
+}
+
+header input[type="text"] {
+    padding: 12px;
+    width: 200px;
+    margin-right:200px ;
+}
+
+header button {
+    padding: 12px;
+    margin-right: 10px;
+    background-color:gold;
+    border: solid;
+    cursor: pointer;
+}
+.last-buttons{
+    margin-right: 100px;
+}
+
+
+h1 {
+    margin-bottom: 10px;
+color: aliceblue;
+}
+
+
+
+h2{
+color: aliceblue;
+}
+a{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: aliceblue;
+    border-color: gainsboro;
+    margin-right: 30px;
+   
+    
+}
+#last-buttons{
+    margin-right: 40px;
+}
+.add-to-cart{
+    margin-top:10px;
+    height: 35px;
+    width:120px;
+    background-color: black;
+    color: aliceblue;
+}
+
+    </style>
+    <script>
+        function addToCart(event) {
+    const foodCard = event.target.closest('.food-card');
+    const foodTitle = foodCard.querySelector('p').textContent;
+    const foodPrice = foodCard.querySelector('span').textContent;
+    const foodImage = foodCard.querySelector('img').src;
+
+    const cartItem = {
+        title: foodTitle,
+        price: foodPrice,
+        image: foodImage
+    };
+
+    // Get the current cart from localStorage, or create a new one
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cart.push(cartItem);
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${foodTitle} added to cart`); // Use backticks for template literals
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', addToCart);
+    });
+});
+    </script>
+        
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+         <h2>HUNGRY HIVES</h2>
+            
+            <ul>
+           
+                <li><a href="addtocart.html"> my cart</a></li>
+                
+                <li><a href="offer.html">offers</a></li>
+                <li><a href="payment.html">payment</a></li>
+            </ul>
+        </div>
+        
+        
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header Section -->
+            <header>
+                <div id="first-button">
+                <button>adress:</button><input type="text" placeholder="Your Address">
+                <button>Search</button><input type="text" placeholder="Search"></div>
+                <div id="last-buttons"><a href="offer.html">offer</a>
+                 
+                <a href="signin.html">sign in</a>
+                </div>
+            </header>
+            <h1>Pizza</h1>
+            <div class="food-menu">
+                
+                <div class="food-cart">
+                    <img src="Green Scenery Illustrative Novel Book Cover.png">
+                    <h3>Love Brings You Home</h3>
+                    <p class="writer">Helene Paquet</p><br>
+                    <p class="categories">Romance</p>
+                    <p class="book_price">₹450</p><br>
+                   <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                <div class="food-card">
+                    <img src="Green Scenery Illustrative Novel Book Cover.png">
+                    <h3>Love Brings You Home</h3>
+                    <p class="writer">Helene Paquet</p><br>
+                    <p class="categories">Romance</p>
+                    <p class="book_price">₹450</p><br>
+                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                <div class="food-card">
+                    <img src="Green Scenery Illustrative Novel Book Cover.png">
+                    <h3>Love Brings You Home</h3>
+                    <p class="writer">Helene Paquet</p><br>
+                    <p class="categories">Romance</p>
+                    <p class="book_price">₹450</p><br>
+                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                <div class="food-card">
+                    <img src="Green Scenery Illustrative Novel Book Cover.png">
+                    <h3>Love Brings You Home</h3>
+                    <p class="writer">Helene Paquet</p><br>
+                    <p class="categories">Romance</p>
+                    <p class="book_price">₹450</p><br>
+                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                <div class="food-card">
+                    <img src="Green Scenery Illustrative Novel Book Cover.png">
+                    <h3>Love Brings You Home</h3>
+                    <p class="writer">Helene Paquet</p><br>
+                    <p class="categories">Romance</p>
+                    <p class="book_price">₹450</p><br>
+                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                <div class="food-card">
+                    <img src="Green Scenery Illustrative Novel Book Cover.png">
+                    <h3>Love Brings You Home</h3>
+                    <p class="writer">Helene Paquet</p><br>
+                    <p class="categories">Romance</p>
+                    <p class="book_price">₹450</p><br>
+                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                <div class="food-card">
+                    <img src="Green Scenery Illustrative Novel Book Cover.png">
+                    <h3>Love Brings You Home</h3>
+                    <p class="writer">Helene Paquet</p><br>
+                    <p class="categories">Romance</p>
+                    <p class="book_price">₹450</p><br>
+                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                <div class="food-card">
+                    <img src="Green Scenery Illustrative Novel Book Cover.png">
+                    <h3>Love Brings You Home</h3>
+                    <p class="writer">Helene Paquet</p><br>
+                    <p class="categories">Romance</p>
+                    <p class="book_price">₹450</p><br>
+                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                <div class="food-card">
+                    <img src="Green Scenery Illustrative Novel Book Cover.png">
+                    <h3>Love Brings You Home</h3>
+                    <p class="writer">Helene Paquet</p><br>
+                    <p class="categories">Romance</p>
+                    <p class="book_price">₹450</p><br>
+                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                <div class="food-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTin5ryoFm5do-paq9ZCl37GDzH7UAi2SWx-A&s" alt="falafel burger">
+                    <p>falafel burger</p>
+                    <span>Price:90RS</span>
+                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                <div class="food-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkH0yUs04ffffdjxuhF1rFweeHAh6oKIWoug&s" alt="quinoa burger.">
+                    <p>quinoa burger.</p>
+                    <span>Price:105 RS</span>
+                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                <div class="food-card">
+                    <img src="https://img.buzzfeed.com/video-api-prod/assets/53125c5621bf480d8ae4f02b1cf4ea78/BFV8045_BlackBeanBurgers-Thumb1080B.jpg" alt="black bean burger.">
+                    <p>black bean burger.</p>
+                    <span>Price:120 RS</span> <span> <button class="add-to-cart">Add to Cart</button></span>
+                </div>
+                </div>
+                <BR>
+                    <h1>SANDWICH</h1>
+                    <div class="food-menu">
+                        
+                        <div class="food-card">
+                            <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2024/05/veg-cheese-sandwich-recipe.jpg" alt="Cheese Sandwich.">
+                            <p>Cheese Sandwich</p>
+                            <span>Price:120RS</span>
+                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                        </div>
+                        <div class="food-card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEoC-nhjAS8sLhZLain7cDCDFLlZhZgdB9uA&s" alt="Cold Sanwich.">
+                            <p> Cold Sandwich</p>
+                            <span>Price:80.RS</span>
+                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                        </div>
+                        <div class="food-card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtbO0pWgOAIMcF89AEutxg822W74k6Jx8Hnw&s" alt="Grilled Sanwich.">
+                            <p>Grilled Sandwich</p>
+                            <span>Price:100 RS</span>
+                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                        </div>
+                        <div class="food-card">
+                            <img src="https://static.toiimg.com/thumb/57853896.cms?imgsize=1542881&width=800&height=800" alt="Corn Sanwich">
+                            <p>Corn Sandwich</p>
+                            <span>Price:120RS</span>
+                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                        </div>
+                        <div class="food-card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHLq8WRVXQ8_mscU6eq6iCvCp33pTJ-4YqYg&s" alt="Hungry Hive Special Sandwich" >
+                            <p>Hungry Hive Special Sandwich</p>
+                            <span>Price:150 RS</span>
+                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                        </div>
+                        <div class="food-card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8tca8BaymljcEiVPAqzHXPXqsRJjSeMNq6A&s" alt="Cheezy seven Sandwich">
+                            <p>Cheezy seven Sandwich</p>
+                            <span>Price:160. RS</span>
+                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                            </div>
+                        </div>
+                        <BR>
+                            <h1>CHINESE</h1>
+                            <div class="food-menu">
+                                
+                                <div class="food-card">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHytBH5eQpP8qV32IZqJX0AljjTB7thLPYMw&s" alt="Cheese Burger.">
+                                    <p>Veg. Noodles</p>
+                                    <span>Price:140.RS</span>
+                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                </div>
+                                <div class="food-card">
+                                    <img src="https://i1.wp.com/chaitrascreations.com/wp-content/uploads/2021/03/DSC_9197_edited-scaled.jpg?fit=800%2C475&ssl=1" alt="tofu burger.">
+                                    <p>Veg. Hawka Noodles</p>
+                                    <span>Price:160.RS</span>
+                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                </div>
+                                <div class="food-card">
+                                    <img src="https://www.mrsfoodiemumma.com/wp-content/uploads/2020/09/IMG_4684-1536x2048.jpeg" alt="Veg.Singapore Noodles.">
+                                    <p>Veg.Singapore Noodles</p>
+                                    <span>Price:195 RS</span>
+                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                </div>
+                                <div class="food-card">
+                                    <img src="https://www.whiskaffair.com/wp-content/uploads/2020/02/Chilli-Garlic-Noodles-2-3.jpg" alt="Garlic Noodles">
+                                    <p>Garlic Noodles</p>
+                                    <span>Price:150RS</span>
+                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                </div>
+                                <div class="food-card">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSokkwqZd7_afHTs25TDACII3ERVuXaFyt9vA&s" alt="Veg.Steam Momos ">
+                                    <p>Veg.steam Momos</p>
+                                    <span>Price:90 RS</span>
+                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                </div>
+                                <div class="food-card">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkySkAvWk-1siJZN65YIvxw7obLKJ02WOyNw&s" alt="Veg.Fried Momos">
+                                    <p>Veg.Fried Momos</p>
+                                    <span>Price:110 RS</span>
+                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                    </div>
+                                </div>
+                                <BR>
+                                    <h1>SHAKES</h1>
+                                    <div class="food-menu">
+                                        
+                                        <div class="food-card">
+                                            <img src="https://www.thehungrybites.com/wp-content/uploads/2023/06/Strawberry-milkshake-frappuccino-featured.jpg" alt="Stawberry Shake">
+                                            <p>Stawberry Shake</p>
+                                            <span>Price:60.RS</span>
+                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                        </div>
+                                        <div class="food-card">
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCU-ZEpXlYJ2WbWxfkQE5Hy13C9ZJ8-WXxpA&s" alt="Mango Shake">
+                                            <p>Mango Shake</p>
+                                            <span>Price:60.RS</span>
+                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                        </div>
+                                        <div class="food-card">
+                                            <img src="https://www.allrecipes.com/thmb/NHlDzARQoQZnqQOYpEOkZyjJLYw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20804banana-shakeTammyLynn4x3-f07c53dc309143619f2ed3aefdabe4ae.jpg" alt="Banana Shak">
+                                            <p>Banana Shake</p>
+                                            <span>Price:50 RS</span>
+                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                        </div>
+                                        <div class="food-card">
+                                            <img src="https://www.allrecipes.com/thmb/3ce4xfQEXz7vzjbrPqM-qaZh-OY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/228324oreo-milkshakeFranceC4x3-8a55db984bf84d27bb3f5a4feab4ea20.jpg" alt="Oreo Shake">
+                                            <p>Oreo Shake</p>
+                                            <span>Price:70RS</span>
+                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                        </div>
+                                        <div class="food-card">
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAV7uTB_bKiZ8nDegg1Q_cw-qI9MNLpWT6Fg&s" alt="Vanilla Shake">
+                                            <p>Vanilla Shake</p>
+                                            <span>Price:60 RS</span>
+                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                        </div>
+                                        <div class="food-card">
+                                            <img src="https://tastesofhomemade.com/wp-content/uploads/2022/04/Butterscotch-Milkshake-10.jpg" alt="Butterscotch Shake">
+                                            <p>Butterscotch Shake</p>
+                                            <span>Price:90.RS</span>
+                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                            </div>
+                                        </div>
+                                        <BR>
+                                            <h1>PASTA</h1>
+                                            <div class="food-menu">
+                                                
+                                                <div class="food-card">
+                                                    <img src="https://i.ytimg.com/vi/OcFlqNZyrJ4/maxresdefault.jpg" alt="Stawberry Shake">
+                                                    <p>White sauce Pasta</p>
+                                                    <span>Price:120.RS</span>
+                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                </div>
+                                                <div class="food-card">
+                                                    <img src="https://static.toiimg.com/thumb/59695981.cms?width=1200&height=900" alt="Mango Shake">
+                                                    <p>Red sauce Pasta</p>
+                                                    <span>Price:130.RS</span>
+                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                </div>
+                                                <div class="food-card">
+                                                    <img src="https://static.toiimg.com/thumb/83107712.cms?imgsize=329789&width=800&height=800" alt="Banana Shak">
+                                                    <p>Mix sauce Pasta</p>
+                                                    <span>Price:150.RS</span>
+                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                </div>
+                                                <div class="food-card">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg4oQV1Spqi1vK8dilTviZKrfrtf0-n3ZJTA&s" alt="Oreo Shake">
+                                                    <p>Pesto penne Pasta</p>
+                                                    <span>Price:170.RS</span>
+                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                </div>
+                                                <div class="food-card">
+                                                    <img src="https://www.foodandwine.com/thmb/dR9xRORMB7GqdUFGhgKx0uUgyq0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/FAW-recipes-creamy-tomato-rigatoni-hero-3069b1600c0641828a7269f676e12bd8.jpg" alt="Vanilla Shake">
+                                                    <p>Creamy tomato Pasta</p>
+                                                    <span>Price:160.RS</span>
+                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                </div>
+                                                <div class="food-card">
+                                                    <img src="https://sugarspunrun.com/wp-content/uploads/2024/03/Cajun-chicken-pasta-1-of-1.jpg" alt="Butterscotch Shake">
+                                                    <p>Chicken penne pasta</p>
+                                                    <span>Price:190.RS</span>
+                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                    </div>
+                                                </div>
+                                                <BR>
+                                                    <h1>Tandoori nights</h1>
+                                                    <div class="food-menu">
+                                                        
+                                                        <div class="food-card">
+                                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5c3nmIaqxrvcf419YEERu5xOU3jq2fs8xHg&s" alt="Stawberry Shake">
+                                                            <p>Tandoori Chaap</p>
+                                                            <span>Price:180.RS</span>
+                                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                        </div>
+                                                        <div class="food-card">
+                                                            <img src="https://images.herzindagi.info/image/2024/May/malai-chaap-recipe-at-home.jpg" alt="Mango Shake">
+                                                            <p>Malai Chaap</p>
+                                                            <span>Price:160.RS</span>
+                                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                        </div>
+                                                        <div class="food-card">
+                                                            <img src="https://images.herzindagi.info/image/2024/Jun/afghani-chaap-recipe.jpg" alt="Banana Shak">
+                                                            <p>Afghani soya Chaap</p>
+                                                            <span>Price:200.RS</span>
+                                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                        </div>
+                                                        <div class="food-card">
+                                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsE1n8N5Ock-cPqowj4gI-4Ju9xfQfJRRrpA&s" alt="Oreo Shake">
+                                                            <p>Achari Chaap</p>
+                                                            <span>Price:170.RS</span>
+                                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                        </div>
+                                                        <div class="food-card">
+                                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO53CdKCeV-rjW60zaZIpYMCHd98rpEVqIMw&s" alt="Vanilla Shake">
+                                                            <p>Mushroom Tikka</p>
+                                                            <span>Price:140.RS</span>
+                                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                        </div>
+                                                        <div class="food-card">
+                                                            <img src="https://www.cookforindia.com/wp-content/uploads/2016/08/Paneer-Tikka-_LR-1140x500.jpg" alt="Butterscotch Shake">
+                                                            <p>Panneer Tikka</p>
+                                                            <span>Price:220.RS</span>
+                                                            <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                            </div>
+                                                        </div>
+                                                        <BR>
+                                                            <h1>Amritsari Kulcha</h1>
+                                                            <div class="food-menu">
+                                                                
+                                                                <div class="food-card">
+                                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy-vlVUgTnZXxZaXSHlkj9qzcZL7p-JUIXaQ&s" alt="Stawberry Shake">
+                                                                    <p>Aloo Piyazz Kulcha</p>
+                                                                    <span>Price:120.RS</span>
+                                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                                </div>
+                                                                <div class="food-card">
+                                                                    <img src="https://i0.wp.com/yummraj.com/wp-content/uploads/2019/03/img_9431-1.jpg?resize=870%2C750&ssl=1" alt="Mango Shake">
+                                                                    <p>Gobi Kulcha</p>
+                                                                    <span>Price:130.RS</span>
+                                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                                </div>
+                                                                <div class="food-card">
+                                                                    <img src="https://myfoodstory.com/wp-content/uploads/2021/10/Garlic-Cheese-Kulcha-1-2-720x480.jpg" alt="Banana Shak">
+                                                                    <p>Aloo Cheese Kulcha</p>
+                                                                    <span>Price:150.RS</span>
+                                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                                </div>
+                                                                <div class="food-card">
+                                                                    <img src="https://b.zmtcdn.com/data/dish_photos/4d5/cab20dc4fab2d1a89b6ec618792244d5.jpg" alt="Oreo Shake">
+                                                                    <p>Gobi Cheese Kulcha</p>
+                                                                    <span>Price:140.RS</span>
+                                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                                </div>
+                                                                <div class="food-card">
+                                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrcLoUWOrAOv6Z-pBuLS1BPRSX3C34FfD7Ag&s" alt="Vanilla Shake">
+                                                                    <p>Mix Veg Kulcha</p>
+                                                                    <span>Price:160.RS</span>
+                                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                                </div>
+                                                                <div class="food-card">
+                                                                    <img src="https://enjoyinfourseason.com/wp-content/uploads/2022/05/Fourseason-CHUR-CHUR-KULCHA-SPL..jpg" alt="Butterscotch Shake">
+                                                                    <p>Chur Chur Kulcha</p>
+                                                                    <span>Price: 180.RS</span>
+                                                                    <span> <button class="add-to-cart">Add to Cart</button></span>
+                                                                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

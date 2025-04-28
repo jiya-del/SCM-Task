@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rate & Review</title>
+  <link rel="stylesheet" href="rateus.css">
+</head>
+<body>
+  <div class="review-container">
+    <h2>Rate and Review Our Bookstore</h2>
+
+    <!-- Star Rating -->
+    <div class="stars" id="starRating">
+      <span data-value="1" class="star">&#9733;</span>
+      <span data-value="2" class="star">&#9733;</span>
+      <span data-value="3" class="star">&#9733;</span>
+      <span data-value="4" class="star">&#9733;</span>
+      <span data-value="5" class="star">&#9733;</span>
+    </div>
+    <p id="ratingMessage">Your rating: <span id="ratingValue">0</span></p>
+
+    <!-- Review Box -->
+    <textarea id="reviewBox" placeholder="Write your review here..." rows="5"></textarea>
+    <button id="submitReview">Submit Review</button>
+
+    <!-- Display User Feedback -->
+    <div id="userFeedback">
+      <h3>Thank you for your feedback!</h3>
+      <p><strong>Rating:</strong> <span id="finalRating"></span></p>
+      <p><strong>Review:</strong> <span id="finalReview"></span></p>
+    </div>
+  </div>
+  <script src="scriptus.js"></script>
+  <div class="home">
+    <a href="home.html">HOME--></a>
+</div>
+</body>
+</html>

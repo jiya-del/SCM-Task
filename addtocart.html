@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        .cart-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+        }
+        .cart-item p {
+            font-size: 30px;
+            text-align: center;
+
+
+        }
+        
+        h1{
+            text-align: center;
+            font-size: 50px;
+            text-decoration:underline;
+            color: aliceblue;
+        
+        }
+        
+        .cart-item span {
+            font-size: 16px;
+            color: white;
+        }
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .delete-btn:hover {
+            background-color: darkred;
+        }
+        .total {
+            font-size: 50px;
+            text-decoration: overline;
+            margin-top: 20px;
+            font-weight: bold;
+            margin-right: 40px;
+            color: aliceblue;
+        }
+        p{
+            font-size: 50px;
+            color: aliceblue;
+        }
+        a{
+            
+            text-decoration: none;
+            background-color: black;
+            padding: 8px;
+            color: aliceblue;
+            font-size: 30px;
+            
+        }
+        a:hover{
+            transform: scale(1.1);
+        }
+        .container{
+            display: flex;
+            align-items: center;
+           
+        }
+    </style>
+</head>
+<body background="C:\Users\mohit\Desktop\iyvbidywe.png">
+    <div class="bg">
+    <h1>Your Cart</h1>
+    <div id="cart"></div>
+    <div class="container">
+    <div class="total" id="total"></div>
+    <a href="PAYMENT.html">PAY AMOUNT</a></div>
+    
+
+    <script>
+       
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+
+        const cartContainer = document.getElementById('cart');
+        const totalContainer = document.getElementById('total');
+
+        if (cart.length === 0) {
+            cartContainer.innerHTML = "<p>Your cart is empty!</p>";
+            totalContainer.textContent = ""; 
+        } else {
+            let totalAmount = 0; 
+
+            cart.forEach((item, index) => {
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.classList.add('cart-item');
+
+                const foodImage = document.createElement('img');
+                foodImage.src = item.image;
+                cartItemDiv.appendChild(foodImage);
+
+                const foodTitle = document.createElement('p');
+                foodTitle.textContent = item.title;
+                cartItemDiv.appendChild(foodTitle);
+
+                const foodPrice = document.createElement('span');
+                foodPrice.textContent = item.price;
+                cartItemDiv.appendChild(foodPrice);
+
+                
+                const priceValue = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
+                totalAmount += priceValue; 
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.classList.add('delete-btn');
+            
+                deleteBtn.addEventListener('click', () => {
+                  
+                    cart.splice(index, 1);
+
+                    
+                    localStorage.setItem('cart', JSON.stringify(cart));
+
+                    location.reload(); 
+                });
+
+                cartItemDiv.appendChild(deleteBtn);
+                cartContainer.appendChild(cartItemDiv);
+            });
+
+   
+            totalContainer.textContent = Total` Amount: ${totalAmount} RS`;
+        }
+    </script>
+    </div>
+</body>
+</html>

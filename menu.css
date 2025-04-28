@@ -1,0 +1,65 @@
+.food-menu{
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+
+
+}
+.food-menu .food-card{
+    height: 620px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 1px;
+    border:2px solid #089da1
+
+    
+}
+.food-menu .food-card h3{
+    font-size: 25px;
+}
+.food-menu .food-card img{
+    height: 350px;
+}
+.food-menu .food-card .writer{
+    font-size: 14px;
+    line-height: 1.6;
+    font-size: large;
+}
+.food-menu .food-card .book_price{
+    margin-top: 5px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 25px;
+}
+.food-menu .food-card .categories{
+    color: #089da1;
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: large;
+}
+
+
+.food-menu .food-card .btn{
+    padding: 10px 20px;
+    background: #089da1;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 5px;
+
+}
+.food-menu .food-card .btn:hover{
+    letter-spacing: 1px;
+    transform: scale(1.03);
+    box-shadow: 0 10px 15px #089da1;
+    background: #fff;
+    color: #089da1;
+}
+@media (max-width:770px){
+    .arrivals{
+        padding: 20px}
+}
+.food-menu .food-card:hover{
+    transform: scale(1.03);
+    box-shadow: 0 10px 15px #089da1;
+}
